@@ -1,0 +1,10 @@
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+body.light {
+  color: black;
+  background-color: white;
+}
+body.dark {
+  color: white;
+  background-color: black;
+}
+@import "bootstrap";
