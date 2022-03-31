@@ -10,13 +10,40 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="<%= cookies[:theme] %>">
-
-  <% if cookies[:theme] == "light" %>
-    <%= link_to "go dark", root_path(theme: "dark") %>
-  <% else %>
-    <%= link_to "go light", root_path(theme: "light") %>
-  <% end %>
+  <body class="<%= cookies[:theme] %> ">
+  <nav class="navbar navbar-expand-lg navbar-<%=cookies[:theme]%> bg-<%=cookies[:theme]%>">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+        <li class="nav-item">
+          <d class="nav-link">
+            <div class="theme">
+              <% if cookies[:theme] == "light" %>
+                <%= link_to "\u{263D}", root_path(theme: "dark"), class: "light" %>
+              <% else %>
+                <%= link_to "\u{263C}", root_path(theme: "light"), class: "dark" %>
+              <% end %>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
   <%= yield %>
 

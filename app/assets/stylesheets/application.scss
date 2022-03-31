@@ -2,9 +2,11 @@
 body.light {
   color: black;
   background-color: white;
+  text-decoration: none;
 }
 body.dark {
   color: white;
   background-color: black;
+  text-decoration: none;
 }
 @import "bootstrap";
